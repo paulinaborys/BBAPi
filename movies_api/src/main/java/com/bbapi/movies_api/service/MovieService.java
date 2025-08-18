@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.bbapi.movies_api.entity.Movie;
 
-public interface MovieService {
+public interface MovieService{
     
     List<Movie> getAllMovies();
     

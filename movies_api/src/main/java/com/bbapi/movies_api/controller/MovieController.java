@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.bbapi.movies_api.entity.Movie;
+import com.bbapi.movies_api.service.MovieService;
+
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -30,23 +34,23 @@ public class MovieController {
     }
 
     @GetMapping("/{id}")
-    public String getMovieById(@RequestParam Long id) {
+    public Movie getMovieById(@RequestParam Long id) {
         return movieService.getMovieById(id);
     }
 
     @PostMapping()
-    public String createMovie(@RequestBody Movie movie) {        
+    public Movie createMovie(@RequestBody Movie movie) {        
         return movieService.createMovie(movie);
     }
     
     @PutMapping("/{id}")
-    public String updateMovie(@PathVariable Long id, @RequestBody Movie movie) {
+    public Movie updateMovie(@PathVariable Long id, @RequestBody Movie movie) {
         return movieService.updateMovie(id, movie);
     }
 
     @DeleteMapping("/{id}")
-    public String deleteMovie(@PathVariable Long id){
-        return movieService.deleteMovie(id);
+    public void deleteMovie(@PathVariable Long id){
+        movieService.deleteMovie(id);
     }
     
     
