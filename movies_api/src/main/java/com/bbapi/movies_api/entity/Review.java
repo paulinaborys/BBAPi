@@ -1,18 +1,22 @@
 package com.bbapi.movies_api.entity;
 
+import java.io.Serializable;
+
+import com.bbapi.movies_api.entity.Review.ReviewId;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
 
 
 @Entity
+@IdClass(ReviewId.class)
 public class Review {
 
     @Id
-    @GeneratedValue
-    private Long Id;
-
     private final Long  movie_id;
+    @Id
     private final Long user_id;
     private final Double rating;
 
@@ -20,14 +24,6 @@ public class Review {
         this.movie_id=movie_id;
         this.user_id=user_id;
         this.rating=rating;
-    }
-
-    public Long getId() {
-        return Id;
-    }
-
-    public void setId(Long id) {
-        Id = id;
     }
 
     public Long getMovie_id() {
@@ -42,5 +38,16 @@ public class Review {
         return rating;
     }
 
+    public class ReviewId implements Serializable {
+        private Long userId;
+        private Long movieId;
+
     
+        public ReviewId() {}
+        public ReviewId(Long userId, Long movieId) {
+            this.userId = userId;
+            this.movieId = movieId;
+        }
+        
+    }
 }
