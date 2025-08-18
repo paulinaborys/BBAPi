@@ -18,6 +18,12 @@ public class Review {
     private final Long userId;
     private final Double rating;
 
+    public Review() {
+        this.movieId = null;
+        this.userId = null;
+        this.rating = null;
+    }
+
     public Review(Long movie_id,Long user_id, Double rating){
         this.movieId=movie_id;
         this.userId=user_id;

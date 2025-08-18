@@ -28,6 +28,12 @@ public class Cinephile {
     public void setName(String name) {
         this.name = name;
     }
+    public Set<Movie> getFavourites() {
+        return favourites;
+    }
+    public void setFavourites(Set<Movie> favourites) {
+        this.favourites = favourites;
+    }
 
     
 }
