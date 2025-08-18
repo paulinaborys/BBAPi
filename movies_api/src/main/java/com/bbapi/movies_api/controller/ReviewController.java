@@ -32,12 +32,12 @@ public class ReviewController {
         return this.rs.getReviews();
     }
     
-    @GetMapping("/m{id}")
+    @GetMapping("/movie/{id}")
     public List<Review> getMovieReviews(@PathVariable Long id) {
         return this.rs.getMovieReviews(id);
     }
 
-    @GetMapping("/u{id}")
+    @GetMapping("/user/{id}")
     public List<Review> getUserReviews(@PathVariable Long id) {
         return this.rs.getUserReviews(id);
     }
