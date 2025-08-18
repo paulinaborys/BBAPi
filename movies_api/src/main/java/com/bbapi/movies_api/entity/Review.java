@@ -13,7 +13,7 @@ public class Review {
 
     @Id
     @GeneratedValue
-    private final Long Id;
+    private Long Id;
 
     private final Integer  movie_id;
     private final Integer user_id;
