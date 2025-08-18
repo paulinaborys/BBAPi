@@ -59,7 +59,7 @@ The system currently supports three main entities:
 
 ```bash
 # Clone repository
-git clone https://github.com/your-org/bbapi.git
+https://github.com/paulinaborys/BBAPi.git
 cd bbapi
 
 # Build project
