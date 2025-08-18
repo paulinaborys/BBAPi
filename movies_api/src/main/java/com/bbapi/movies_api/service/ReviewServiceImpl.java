@@ -3,10 +3,12 @@ package com.bbapi.movies_api.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.bbapi.movies_api.entity.Review;
 import com.bbapi.movies_api.repository.ReviewRepository;
 
+@Service
 public class ReviewServiceImpl implements ReviewService {
     @Autowired
     private ReviewRepository reviewRepo;
@@ -21,13 +23,13 @@ public class ReviewServiceImpl implements ReviewService {
     public List<Review> getUserReviews(Long uid) {
         // TODO Auto-generated method stub
         //SELECT * FROM REVIEWS where uid={uid};
-        return reviewRepo.findUID(uid);
+        return reviewRepo.findAll();
     }
 
     @Override
     public List<Review> getMovieReviews(Long mid) {
         // TODO Auto-generated method stub
-        return reviewRepo.findMID(mid);
+        return reviewRepo.findAll();
     }
 
     @Override
