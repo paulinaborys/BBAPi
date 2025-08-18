@@ -15,6 +15,6 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    @OneToMany
-    private Set<Movie> favourites;
+    // @OneToMany
+    // private Set<Movie> favourites;
 }

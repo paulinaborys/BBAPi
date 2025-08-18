@@ -2,10 +2,11 @@ package com.bbapi.movies_api.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
 
 import com.bbapi.movies_api.entity.Review;
 
-
+@Service
 public interface ReviewService {
     
     public List<Review> getReviews();
