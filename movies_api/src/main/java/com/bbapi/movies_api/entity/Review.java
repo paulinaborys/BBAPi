@@ -1,10 +1,7 @@
 package com.bbapi.movies_api.entity;
 
-import org.springframework.stereotype.Indexed;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 
@@ -23,6 +20,26 @@ public class Review {
         this.movie_id=movie_id;
         this.user_id=user_id;
         this.rating=rating;
+    }
+
+    public Long getId() {
+        return Id;
+    }
+
+    public void setId(Long id) {
+        Id = id;
+    }
+
+    public Long getMovie_id() {
+        return movie_id;
+    }
+
+    public Long getUser_id() {
+        return user_id;
+    }
+
+    public Double getRating() {
+        return rating;
     }
 
     

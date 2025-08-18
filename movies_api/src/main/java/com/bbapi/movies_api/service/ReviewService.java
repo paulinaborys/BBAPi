@@ -2,9 +2,6 @@ package com.bbapi.movies_api.service;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
-import org.springframework.data.jpa.repository.Query;
-
 import com.bbapi.movies_api.entity.Review;
 
 public interface ReviewService {
