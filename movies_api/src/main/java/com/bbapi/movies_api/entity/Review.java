@@ -15,11 +15,11 @@ public class Review {
     @GeneratedValue
     private Long Id;
 
-    private final Integer  movie_id;
-    private final Integer user_id;
+    private final Long  movie_id;
+    private final Long user_id;
     private final Double rating;
 
-    public Review(Integer movie_id,Integer user_id, Double rating){
+    public Review(Long movie_id,Long user_id, Double rating){
         this.movie_id=movie_id;
         this.user_id=user_id;
         this.rating=rating;
