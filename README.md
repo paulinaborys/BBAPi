@@ -45,7 +45,7 @@ The system currently supports three main entities:
 - **Java 17+**  
 - **Spring Boot** (REST)  
 - **Maven** (build & dependency management)  
-- **H2 (Database)  
+- **H2** (Database)  
 
 ---
 
