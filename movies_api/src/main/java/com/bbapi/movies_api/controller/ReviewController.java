@@ -10,6 +10,7 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -32,12 +33,12 @@ public class ReviewController {
     }
     
     @GetMapping("/m{id}")
-    public List<Review> getMovieReviews(@RequestParam Long movieID) {
+    public List<Review> getMovieReviews(@PathVariable Long movieID) {
         return this.rs.getMovieReviews(movieID);
     }
 
     @GetMapping("/u{id}}")
-    public List<Review> getUserReviews(@RequestParam Long userID) {
+    public List<Review> getUserReviews(@PathVariable Long userID) {
         return this.rs.getUserReviews(userID);
     }
     
@@ -48,7 +49,7 @@ public class ReviewController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteReview(@RequestBody Long uID){
+    public void deleteReview(@PathVariable Long uID){
         this.rs.deleteReview(uID);
     }
     
