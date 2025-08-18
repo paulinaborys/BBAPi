@@ -3,8 +3,8 @@ package com.bbapi.movies_api.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bbapi.movies_api.entity.User;
-import com.bbapi.movies_api.service.UserService;
+import com.bbapi.movies_api.entity.Cinephile;
+import com.bbapi.movies_api.service.CinephileService;
 
 import java.util.List;
 
@@ -21,32 +21,32 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 @RestController
-@RequestMapping("/users")
-public class UserController {
-    private final UserService userService;
+@RequestMapping("/cinephiles")
+public class CinephileController {
+    private final CinephileService cinephileService;
 
-    public UserController(UserService userService) {
-        this.userService = userService;
+    public CinephileController(CinephileService cinephileService) {
+        this.cinephileService = cinephileService;
     }
 
     @GetMapping
-    public ResponseEntity<List<User>> getMethodName() {
-        return ResponseEntity.ok(userService.getAllUsers());
+    public ResponseEntity<List<Cinephile>> getAllCinephiles() {
+        return ResponseEntity.ok(cinephileService.getAllCinephiles());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<User> getUserById(@RequestParam Long id) {
-        return ResponseEntity.ok(userService.getUserById(id));
+    public ResponseEntity<Cinephile> getCinephileById(@RequestParam Long id) {
+        return ResponseEntity.ok(cinephileService.getCinephileById(id));
     }
 
     @PostMapping()
-    public ResponseEntity<User> addUser(@RequestBody User user) {
-        return ResponseEntity.ok(userService.createUser(user));
+    public ResponseEntity<Cinephile> addCinephile(@RequestBody Cinephile cinephile) {
+        return ResponseEntity.ok(cinephileService.createCinephile(cinephile));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteUser(@PathVariable Long id){
-        userService.deleteUser(id);
+    public ResponseEntity<Void> deleteCinephile(@PathVariable Long id){
+        cinephileService.deleteCinephile(id);
         return ResponseEntity.noContent().build();
     }
     

@@ -7,7 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.bbapi.movies_api.entity.Review;
 
-@Service
 public interface ReviewService {
     
     public List<Review> getReviews();
