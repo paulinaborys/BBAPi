@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bbapi.movies_api.entity.Review;
+import com.bbapi.movies_api.entity.ReviewId;
 import com.bbapi.movies_api.repository.ReviewRepository;
 
 @Service
@@ -23,13 +24,13 @@ public class ReviewServiceImpl implements ReviewService {
     public List<Review> getUserReviews(Long uid) {
         // TODO Auto-generated method stub
         //SELECT * FROM REVIEWS where uid={uid};
-        return reviewRepo.findAll();
+        return reviewRepo.findUID(uid);
     }
 
     @Override
     public List<Review> getMovieReviews(Long mid) {
         // TODO Auto-generated method stub
-        return reviewRepo.findAll();
+        return reviewRepo.findMID(mid);
     }
 
     @Override
@@ -39,7 +40,7 @@ public class ReviewServiceImpl implements ReviewService {
     }
 
     @Override
-    public void deleteReview(Long reviewID) {
+    public void deleteReview(ReviewId reviewID) {
         // TODO Auto-generated method stub
         reviewRepo.deleteById(reviewID);
     }

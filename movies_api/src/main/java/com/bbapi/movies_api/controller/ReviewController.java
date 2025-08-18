@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bbapi.movies_api.entity.Review;
+import com.bbapi.movies_api.entity.ReviewId;
 import com.bbapi.movies_api.service.ReviewService;
 
 import java.util.List;
@@ -32,13 +33,13 @@ public class ReviewController {
     }
     
     @GetMapping("/m{id}")
-    public List<Review> getMovieReviews(@PathVariable Long movieID) {
-        return this.rs.getMovieReviews(movieID);
+    public List<Review> getMovieReviews(@PathVariable Long id) {
+        return this.rs.getMovieReviews(id);
     }
 
     @GetMapping("/u{id}")
-    public List<Review> getUserReviews(@PathVariable Long userID) {
-        return this.rs.getUserReviews(userID);
+    public List<Review> getUserReviews(@PathVariable Long id) {
+        return this.rs.getUserReviews(id);
     }
     
     @PostMapping()
@@ -48,8 +49,8 @@ public class ReviewController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteReview(@PathVariable Long uID){
-        this.rs.deleteReview(uID);
+    public void deleteReview(@PathVariable ReviewId id){
+        this.rs.deleteReview(id);
     }
     
     

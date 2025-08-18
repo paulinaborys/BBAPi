@@ -6,16 +6,19 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import com.bbapi.movies_api.entity.Review;
+import com.bbapi.movies_api.entity.ReviewId;
 
 @Repository
-public interface ReviewRepository extends JpaRepository<Review, Long> {
+public interface ReviewRepository extends JpaRepository<Review, ReviewId> {
 
-    // @Query("SELECT r FROM Review r WHERE r.uid = :uid;")
-    // public List<Review> findUID(Long uid);
+    @Query("SELECT r FROM Review r WHERE r.userId = :uid")
+    public List<Review> findUID(@Param("uid") Long uid);
 
-    // @Query("SELECT r FROM Review r WHERE r.mid = :mid;")
-    // public List<Review> findMID(Long mid);
+    @Query("SELECT r FROM Review r WHERE r.movieId = :mid")
+    List<Review> findMID(@Param("mid") Long mid);
+    
     
 }

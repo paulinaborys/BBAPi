@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.bbapi.movies_api.entity.Review;
+import com.bbapi.movies_api.entity.ReviewId;
 
 public interface ReviewService {
     
@@ -16,6 +17,8 @@ public interface ReviewService {
 
     public Review postReview(Review r);
 
-    public void deleteReview(Long reviewID);
+    //public void deleteReview(Long reviewID);
+
+    public void deleteReview(ReviewId reviewID);
 
 }
