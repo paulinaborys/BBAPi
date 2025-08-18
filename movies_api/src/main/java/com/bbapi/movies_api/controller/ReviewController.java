@@ -37,7 +37,7 @@ public class ReviewController {
         return this.rs.getMovieReviews(movieID);
     }
 
-    @GetMapping("/u{id}}")
+    @GetMapping("/u{id}")
     public List<Review> getUserReviews(@PathVariable Long userID) {
         return this.rs.getUserReviews(userID);
     }
