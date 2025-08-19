@@ -4,24 +4,32 @@
 
 // run api request
 async function getTopRatings() {
-    const url = "http://localhost:8080/reviews/top-ratings";
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error(`Response status: ${response.status}`);
-      }
-  
-      const result = await response.json();
-      console.log(result);
-      htmlList = "";
-      result.forEach(element => {
-        htmlList += "<li>"+element[1] + ", "+element[2];
-      });
-      document.getElementById("top-movies").innerHTML = "<ol>"+htmlList+"</ol>";
-    } catch (error) {
-      console.error(error.message);
+  const url = "http://localhost:8080/reviews/top-ratings";
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
     }
+
+    const result = await response.json();
+    console.log(result);
+
+    let htmlList = '<ul class="list-group">';
+    result.forEach(element => {
+      htmlList += `
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <span class="fw-bold">${element[1]}</span>
+          <span class="badge bg-primary rounded-pill">${element[2]}</span>
+        </li>`;
+    });
+    htmlList += '</ul>';
+
+    document.getElementById("top-movies").innerHTML = htmlList;
+  } catch (error) {
+    console.error(error.message);
   }
+}
+
 
   async function getMovies() {
     const url = "http://localhost:8080/movies";
