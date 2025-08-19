@@ -81,7 +81,8 @@ async function getTopRatingsByGenre() {
     result.forEach(element => {
       htmlList +=  `
       <li class="list-group-item d-flex justify-content-between align-items-center">
-        <span class="fw-bold">${element[1]}</span></li>`; // Assumes element[1] contains the movie name
+        <span class="fw-bold">${element[1]}</span>
+        <span class="badge bg-primary rounded-pill">${Math.round(element[3] * 10)/ 10}</span></li>`; // Assumes element[1] contains the movie name
     });
 
     document.getElementById("top-genres").innerHTML = `<ol>${htmlList}</ol>`;
