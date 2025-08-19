@@ -84,21 +84,30 @@
         <button class="btn btn-secondary text-dark shadow-sm" onclick="postNewRewiev()">Send</button>
       </div>
 
-      <div>
+      <div class="container my-5">
         <hr class="col-1 my-5">
-
-        <h2>Top Ranking By Genre:</h2>
-
-        <label for="genre">Choose a genre:</label>
-        <select id="genre">
-          <option value="action">Action</option>
-          <option value="thriller">Thriller</option>
-          <option value="fantasy">Fantasy</option>
-          <option value="biography">Biography</option>
-          <option value="romance">Romance</option>
-        </select>
-        <button class="btn btn-secondary text-dark shadow-sm" onclick="getTopRatingsByGenre()">Get</button>
-        <p id="top-genres"></p>
+      
+        <h2 class="mb-4">Top Ranking By Genre:</h2>
+      
+        <!-- Form controls in one row with spacing -->
+        <div class="row g-3 align-items-end mb-4">
+          <div class="col-md-6">
+            <label for="genre" class="form-label">Choose a genre:</label>
+            <select id="genre" class="form-select">
+              <option value="action">Action</option>
+              <option value="thriller">Thriller</option>
+              <option value="fantasy">Fantasy</option>
+              <option value="biography">Biography</option>
+              <option value="romance">Romance</option>
+            </select>
+          </div>
+          <div class="col-md-auto">
+            <button class="btn btn-secondary text-dark shadow-sm" onclick="getTopRatingsByGenre()">Get</button>
+          </div>
+        </div>
+      
+        <!-- List of results -->
+        <ol id="top-genres" class="list-group list-group-numbered"></ol>
       </div>
     </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
