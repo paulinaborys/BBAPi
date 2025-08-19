@@ -49,5 +49,10 @@ public class ReviewServiceImpl implements ReviewService {
     public List<Object[]> getTopRatings() {
         return reviewRepo.findTopRatings();
     }
+
+    @Override
+    public List<Object[]> getTopRatingsByGenre(String genre) {
+        return reviewRepo.findTopRatingsByGenre(genre);
+    }
     
 }

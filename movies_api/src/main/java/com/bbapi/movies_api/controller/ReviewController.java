@@ -59,6 +59,11 @@ public class ReviewController {
     public List<Object[]> getTopRatings() {
         return rs.getTopRatings();
     }
+
+    @GetMapping("/top-ratings/{genre}")
+    public List<Object[]> getTopRatingsByGenre(@PathVariable String genre) {
+        return rs.getTopRatingsByGenre(genre);
+    }
     
     
 

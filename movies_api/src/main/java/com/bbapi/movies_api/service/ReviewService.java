@@ -22,4 +22,5 @@ public interface ReviewService {
     public void deleteReview(ReviewId reviewID);
 
     public List<Object[]> getTopRatings();
+    public List<Object[]> getTopRatingsByGenre(String genre);
 }
