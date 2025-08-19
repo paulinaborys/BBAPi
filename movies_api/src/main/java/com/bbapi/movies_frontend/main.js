@@ -89,6 +89,35 @@ async function getTopRatingsByGenre() {
   }
 }
 
+async function postNewRewiev() {
+  var movie_id = document.getElementById("add-review-movie-id").value.toLowerCase();
+  var user_id = document.getElementById("add-review-user-id").value.toLowerCase();
+  var value = document.getElementById("add-review-value").value.toLowerCase();
+
+  const url = `http://localhost:8080/reviews`;
+  console.log(url);
+
+  try {
+    const response = await fetch(url,{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json' // Specify JSON format
+      },
+      body: JSON.stringify({
+        'movieId':movie_id,
+        'userId':user_id,
+        'rating':value,
+      })
+    });
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+  }catch(err) {
+    console.error(`Error: ${err}`);
+  }
+}
+
+
 getTopRatings();
 getTopRatingsByGenre();
 getMovies();
