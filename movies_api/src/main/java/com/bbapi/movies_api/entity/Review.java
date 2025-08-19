@@ -1,5 +1,8 @@
 package com.bbapi.movies_api.entity;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;
@@ -10,15 +13,13 @@ import jakarta.persistence.IdClass;
 public class Review {
 
     @Id
-    private final Long  movieId;
+    private Long  movieId;
     @Id
-    private final Long userId;
-    private final Double rating;
+    private Long userId;
+    private Double rating;
 
     public Review() {
-        this.movieId = null;
-        this.userId = null;
-        this.rating = null;
+
     }
 
     public Review(Long movie_id,Long user_id, Double rating){
@@ -27,16 +28,28 @@ public class Review {
         this.rating=rating;
     }
 
-    public Long getMovie_id() {
-        return movieId;
+    public void setMovieId(Long movieId) {
+        this.movieId = movieId;
     }
 
-    public Long getUser_id() {
-        return userId;
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public void setRating(Double rating) {
+        this.rating = rating;
     }
 
     public Double getRating() {
         return rating;
+    }
+
+    public Long getMovieId() {
+        return movieId;
+    }
+
+    public Long getUserId() {
+        return userId;
     }
 
 
