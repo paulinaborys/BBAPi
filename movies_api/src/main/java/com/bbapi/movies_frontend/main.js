@@ -3,7 +3,7 @@
 //
 
 // run api request
-async function getData() {
+async function getTopRatings() {
     const url = "http://localhost:8080/reviews/top-ratings";
     try {
       const response = await fetch(url);
@@ -23,4 +23,4 @@ async function getData() {
     }
   }
 
-getData();
+getTopRatings();
