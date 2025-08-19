@@ -75,17 +75,25 @@
       
         <h2 class="mb-4">Top Ranking By Genre:</h2>
       
-        <div class="mb-3">
-          <label for="genre" class="form-label">Choose a genre:</label>
-          <select id="genre" class="form-select">
-            <option value="action">Action</option>
-            <option value="thriller">Thriller</option>
-            <option value="fantasy">Fantasy</option>
-            <option value="biography">Biography</option>
-            <option value="romance">Romance</option>
-        </select>
-        <button class="btn btn-secondary text-dark shadow-sm" onclick="getTopRatingsByGenre()">Get</button>
-        <ol id="top-genres" class="list-group"></ol>
+        <!-- Form controls in one row with spacing -->
+        <div class="row g-3 align-items-end mb-4">
+          <div class="col-md-6">
+            <label for="genre" class="form-label">Choose a genre:</label>
+            <select id="genre" class="form-select">
+              <option value="action">Action</option>
+              <option value="thriller">Thriller</option>
+              <option value="fantasy">Fantasy</option>
+              <option value="biography">Biography</option>
+              <option value="romance">Romance</option>
+            </select>
+          </div>
+          <div class="col-md-auto">
+            <button class="btn btn-secondary text-dark shadow-sm" onclick="getTopRatingsByGenre()">Get</button>
+          </div>
+        </div>
+      
+        <!-- List of results -->
+        <ol id="top-genres" class="list-group list-group-numbered"></ol>
       </div>
     </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
