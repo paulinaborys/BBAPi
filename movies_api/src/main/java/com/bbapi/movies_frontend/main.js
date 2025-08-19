@@ -15,7 +15,7 @@ async function getTopRatings() {
       console.log(result);
       htmlList = "";
       result.forEach(element => {
-        htmlList += "<li>"+element[1];
+        htmlList += "<li>"+element[1] + ", "+element[2];
       });
       document.getElementById("top-movies").innerHTML = "<ol>"+htmlList+"</ol>";
     } catch (error) {
