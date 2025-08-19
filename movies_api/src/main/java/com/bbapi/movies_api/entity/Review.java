@@ -1,9 +1,6 @@
 package com.bbapi.movies_api.entity;
 
-import java.io.Serializable;
-
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;
 

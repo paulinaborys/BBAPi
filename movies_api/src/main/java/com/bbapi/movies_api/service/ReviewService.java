@@ -2,8 +2,6 @@ package com.bbapi.movies_api.service;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
-
 import com.bbapi.movies_api.entity.Review;
 import com.bbapi.movies_api.entity.ReviewId;
 
