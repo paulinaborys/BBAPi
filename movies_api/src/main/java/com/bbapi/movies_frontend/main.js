@@ -19,7 +19,7 @@ async function getTopRatings() {
       htmlList += `
         <li class="list-group-item d-flex justify-content-between align-items-center">
           <span class="fw-bold">${element[1]}</span>
-          <span class="badge bg-primary rounded-pill">${element[2]}</span>
+          <span class="badge bg-primary rounded-pill">${Math.round(element[2] * 10)/ 10}</span>
         </li>`;
     });
     htmlList += '</ul>';
