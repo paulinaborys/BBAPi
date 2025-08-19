@@ -20,7 +20,7 @@ public class Review {
     }
 
     public Review(Long movie_id,Long user_id, Double rating){
-        this.movieId=movie_id;
+        this.movieId=movie_id; 
         this.userId=user_id;
         this.rating=rating;
     }

@@ -69,6 +69,23 @@
         <input id="search-movie" type="text" class="form-control"  placeholder="Search by title or director" onkeyup="filterMovies()">
         <p id="all-movies"></p>
       </div>
+
+      <div>
+        <hr class="col-1 my-5">
+
+        <h2>Top Ranking By Genre:</h2>
+
+        <label for="genre">Choose a genre:</label>
+        <select id="genre">
+          <option value="action">Action</option>
+          <option value="thriller">Thriller</option>
+          <option value="fantasy">fantasy</option>
+          <option value="biography">Biography</option>
+          <option value="romance">Romance</option>
+        </select>
+        <button onclick="getTopRatingsByGenre()">Get</button>
+        <p id="top-genres"></p>
+      </div>
     </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
