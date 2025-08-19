@@ -9,6 +9,7 @@ import com.bbapi.movies_api.service.ReviewService;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -54,6 +55,7 @@ public class ReviewController {
         this.rs.deleteReview(id);
     }
     // findTopRatings
+    @CrossOrigin
     @GetMapping("/top-ratings")
     public List<Object[]> getTopRatings() {
         return rs.getTopRatings();
