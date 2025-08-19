@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 
-
+@CrossOrigin
 @RestController
 @RequestMapping("/reviews")
 public class ReviewController {
@@ -55,7 +55,6 @@ public class ReviewController {
         this.rs.deleteReview(id);
     }
     // findTopRatings
-    @CrossOrigin
     @GetMapping("/top-ratings")
     public List<Object[]> getTopRatings() {
         return rs.getTopRatings();

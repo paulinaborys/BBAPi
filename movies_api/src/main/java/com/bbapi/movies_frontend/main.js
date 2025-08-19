@@ -23,4 +23,34 @@ async function getTopRatings() {
     }
   }
 
+  async function getMovies() {
+    const url = "http://localhost:8080/movies";
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`Response status: ${response.status}`);
+      }
+  
+      const result = await response.json();
+      console.log(result);
+      htmlList = "";
+      result.forEach(element => {
+        htmlList += "<tr><td>"+element.id+"</td><td>"+element.title+"</td><td>"+element.director;
+      });
+      document.getElementById("all-movies").innerHTML = "<table class=\"table\"><thead><tr><th>Id</th><th>Title</th><th>Director</th></tr></thead><tbody id=\"table\">"+htmlList+"</tbody></table>";
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+
+function filterMovies(){
+    console.log("abc")
+    var value = document.getElementById("search-movie").value.toLowerCase();
+    $("#table tr").filter(function() {
+        console.log("xyz")
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+}
+
 getTopRatings();
+getMovies();
