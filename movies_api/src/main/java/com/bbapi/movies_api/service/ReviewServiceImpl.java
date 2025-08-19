@@ -44,5 +44,10 @@ public class ReviewServiceImpl implements ReviewService {
         // TODO Auto-generated method stub
         reviewRepo.deleteById(reviewID);
     }
+
+    @Override
+    public List<Object[]> getTopRatings() {
+        return reviewRepo.findTopRatings();
+    }
     
 }

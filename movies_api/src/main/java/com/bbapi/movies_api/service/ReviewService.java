@@ -19,4 +19,5 @@ public interface ReviewService {
 
     public void deleteReview(ReviewId reviewID);
 
+    public List<Object[]> getTopRatings();
 }

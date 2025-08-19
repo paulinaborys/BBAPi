@@ -20,5 +20,6 @@ public interface ReviewRepository extends JpaRepository<Review, ReviewId> {
     @Query("SELECT r FROM Review r WHERE r.movieId = :mid")
     List<Review> findMID(@Param("mid") Long mid);
     
-    
+    @Query("SELECT r.movieId, AVG(r.rating) as AvgRating FROM Review r GROUP BY r.movieId ORDER BY AvgRating")
+    List<Object[]>findTopRatings();
 }
