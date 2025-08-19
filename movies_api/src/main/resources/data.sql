@@ -5,7 +5,7 @@ INSERT INTO cinephile (name) VALUES ('Alex');
 
 INSERT INTO movie (title, director, genre) VALUES ('Harry Potter and the Philosophers Stone', 'Chris Columbus', 'fantasy');
 INSERT INTO movie (title, director, genre) VALUES ('Se7en', 'David Fincher', 'thriller');
-INSERT INTO movie (title, director, genre) VALUES ('Fight Club', 'David Fincher', 'action');
+INSERT INTO movie (title, director, genre) VALUES ('Fight Club', 'David Fincher', 'thriller');
 INSERT INTO movie (title, director, genre) VALUES ('Oppenheimer', 'Christopher Nolan', 'biography');
 
 INSERT INTO review (movie_id, user_id, rating) VALUES (4, 1, 6.0);
