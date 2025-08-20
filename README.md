@@ -68,3 +68,8 @@ mvn clean install
 # Run project
 mvn spring-boot:run
 
+### Example 
+<img width="964" height="283" alt="image" src="https://github.com/user-attachments/assets/3ab4d727-97c1-445e-b0a5-1b82c126dbb5" />
+
+
+
